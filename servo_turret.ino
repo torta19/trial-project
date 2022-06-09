@@ -55,7 +55,7 @@ void loop() {
 
   rawGyroZ = (Wire.read()<<8|Wire.read())/ 131.0;
   yaw = yaw + rawGyroZ*deltaT;
-  pitch = (atan(-1 * rawAccX / sqrt(pow(rawAccY, 2) + pow(rawAccZ, 2))) * 180 / PI) + rawGyroY*deltaT;
+  pitch = (atan(rawAccX / sqrt(pow(rawAccY, 2) + pow(rawAccZ, 2))) * 180 / PI);
   
   
   
